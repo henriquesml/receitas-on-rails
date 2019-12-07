@@ -11,6 +11,11 @@
 </p>
 
 <p>
+    <%= f.label :Tipo %><br/>
+    <%= f.text_field :kind %>
+</p>
+
+<p>
     <%= f.label :Calorias %><br/>
     <%= f.number_field :calories %>
 </p>
@@ -21,8 +26,23 @@
 </p>
 
 <p>
+    <%= f.label :Tempo_de_preparo %><br/>
+    <%= f.time_select :duration %>
+</p>
+
+<p>
+    <%= f.label :Porção %><br/>
+    <%= f.text_field :portion %>
+</p>
+
+<p>
     <%= f.label :Custo %><br/>
     <%= f.number_field :cost %>
+</p>
+
+<p>
+    <%= f.label :Poster %><br/>
+    <%= f.text_field :poster, placeholder: '.JPEG OU .PNG' %>
 </p>
 
 <p>
