@@ -1,34 +1,57 @@
-<h1><%= pluralize(@recipes.size, 'Receita','Receitas' ) %></h1>
+<link rel="stylesheet" type="text/css" href="index.css">
 
-<% @recipes.each do |recipe| %>
-    <article>
-        <header>
-            <h2><%=  link_to recipe.name, recipe_path(recipe) %></h2>
-            <%= imagem(recipe) %>
-        </header>
-        <p>
-            <%= truncate(recipe.stuff, length: 50, separator: ' ') %>
-        </p>
-        <p>
-            <%= formata_caloria(recipe)%>
-        </p>
-        <p>
-            <%= recipe.duration.to_formatted_s(:time) %>min
-        </p>
-        <table>
-            <tr>
-                <th>Modo de preparo:</th>
-                <td>
-                    <%= recipe.prepare_mode %>
-                </td>
+<div class='containerIndex' >
 
-                <th>Custo do prato:</th>
-                <td>
-                    <%= number_to_currency(recipe.cost) %>
-                </td>
-            </tr>
-        </table>
-    </article>
-<% end %>
-<br/>
-<%= link_to 'Nova receita', new_recipe_path %>
+    <div class='contentIndex'>
+
+        <div class='menu' >
+
+            <div>
+                <h1><%= pluralize(@recipes.size, 'Receita','Receitas' ) %></h1>
+            </div>
+
+            <div class='button'>
+                <%= link_to 'Nova receita', new_recipe_path, class: "btn" %>
+            </div>
+
+        </div>
+    <% @recipes.each do |recipe| %>
+        <div class='post'>            
+            
+                <div class='postContent'>
+                
+                    <div class='image'>
+                        
+                        <%= imagem(recipe) %>
+                
+                    </div>
+
+                    <div class='descript'>
+                
+                        <h2><%=  link_to recipe.name, recipe_path(recipe) , class: "title" %></h2>
+                        <p>
+                            <%= truncate(recipe.stuff, length: 50, separator: ' ') %>
+                        </p>
+                        
+                        <p>
+                            Calorias: <%= formata_caloria(recipe)%>
+                        </p>
+                        <p>
+                            Tempo de preparo: <%= recipe.duration.to_formatted_s(:time) %>min
+                        </p>
+
+                        <p>
+                            Custo do Prato: <%= number_to_currency(recipe.cost) %>
+                        </p>
+                
+                    </div>
+                
+                </div>
+            
+        
+        </div>
+    <% end %>
+
+    </div>
+
+</div>

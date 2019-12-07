@@ -4,12 +4,23 @@
     <title>ReceitasOnRails</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="fixed-header">
+        <div class="container">
+            <div class="content">
+              <%= link_to image_tag('logo.png', size:'30', alt:'ReceirasOnRails'), root_path %>
+            </div>
+            <div class="content">
+              <p>ReceitasOnRails</p>
+            </div>
+        </div>
+    </div>
+    <div class="contentAPP">
+      <%= yield %>
+    </div>
   </body>
 </html>
