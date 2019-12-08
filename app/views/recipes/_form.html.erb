@@ -15,7 +15,7 @@
         </div>
 
         <div class='fieldForm'>
-            <%= f.text_area :stuff, cols: 20, rows:5, class:"fieldStuff" %>
+            <%= f.text_area :stuff, class:"fieldStuff" %>
         </div>
 
         <div class='fieldForm'>
@@ -23,7 +23,7 @@
         </div>
 
         <div class='fieldForm'>
-            <%= f.text_field :kind, class:"fieldName" %>
+            <%= f.select :kind, Recipe::KIND, prompt: 'Escolha o tipo', class:"fieldName" %>
         </div>
 
         <div class='fieldForm'>
@@ -39,7 +39,7 @@
         </div>
 
         <div class='fieldForm'>
-            <%= f.text_area :prepare_mode, cols: 20, rows:5, class:"fieldStuff" %>
+            <%= f.text_area :prepare_mode, class:"fieldStuff" %>
         </div>
 
         <div class='fieldForm'>
