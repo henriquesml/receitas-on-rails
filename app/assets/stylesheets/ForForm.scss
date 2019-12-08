@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+body{   
+   margin: 0%;        
+   font-family: Roboto !important 
+}
+
+.containerForForm {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.NameForForm {
+    display: flex;
+    width: 80%;
+    height: 10%;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.ContentForForm{
+    display: flex;
+    width: 80%;
+    height: 90%;
+    align-items: center;
+    justify-content: center;
+}

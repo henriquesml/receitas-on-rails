@@ -1,53 +1,91 @@
-<%= form_for(@recipe) do |f| %>
+<link rel="stylesheet" type="text/css" href="form.css">
 
-<p>
-    <%= f.label :Nome %><br/>
-    <%= f.text_field :name %>
-</p>
+<div class='containerForm'>
+    <%= form_for(@recipe, html: {:class => 'div_form'}) do |f| %>
+        <div  class='fieldForm'>
+            <%= f.label :Nome, class:"labelFor" %><br/>      
+        </div>
 
-<p>
-    <%= f.label :Ingredientes %><br/>
-    <%= f.text_area :stuff, cols: 20, rows:5 %>
-</p>
+        <div class='fieldForm'>
+            <%= f.text_field :name, class:"fieldName" %>
+        </div>
 
-<p>
-    <%= f.label :Tipo %><br/>
-    <%= f.text_field :kind %>
-</p>
+        <div  class='fieldForm'>
+            <%= f.label :Ingredientes, class:"labelFor"  %><br/>  
+        </div>
 
-<p>
-    <%= f.label :Calorias %><br/>
-    <%= f.number_field :calories %>
-</p>
+        <div class='fieldForm'>
+            <%= f.text_area :stuff, cols: 20, rows:5, class:"fieldStuff" %>
+        </div>
 
-<p>
-    <%= f.label :Modo_de_preparo %><br/>
-    <%= f.text_area :prepare_mode, cols: 20, rows:5 %>
-</p>
+        <div class='fieldForm'>
+            <%= f.label :Tipo, class:"labelFor" %><br/>
+        </div>
 
-<p>
-    <%= f.label :Tempo_de_preparo %><br/>
-    <%= f.time_select :duration %>
-</p>
+        <div class='fieldForm'>
+            <%= f.text_field :kind, class:"fieldName" %>
+        </div>
 
-<p>
-    <%= f.label :Porção %><br/>
-    <%= f.text_field :portion %>
-</p>
+        <div class='fieldForm'>
+            <%= f.label :Calorias, class:"labelFor" %><br/>
+        </div>
 
-<p>
-    <%= f.label :Custo %><br/>
-    <%= f.number_field :cost %>
-</p>
+        <div class='fieldForm'>
+            <%= f.number_field :calories, class:"fieldName" %>
+        </div>
 
-<p>
-    <%= f.label :Poster %><br/>
-    <%= f.text_field :poster, placeholder: '.JPEG OU .PNG' %>
-</p>
+        <div  class='fieldForm'>
+            <%= f.label :Modo_de_preparo, class:"labelFor"  %><br/>  
+        </div>
 
-<p>
-    <%= f.submit %>
-    <%= link_to 'Cancelar', root_path%>
-</p>
+        <div class='fieldForm'>
+            <%= f.text_area :prepare_mode, cols: 20, rows:5, class:"fieldStuff" %>
+        </div>
 
-<% end %>
+        <div class='fieldForm'>
+            <%= f.label :Tempo_de_preparo, class:"labelFor" %><br/>
+        </div>
+        <div class='fieldForm'>
+            <%= f.time_select :duration %>
+        </div>
+
+        <div class='fieldForm'>
+            <%= f.label :Porção, class:"labelFor" %><br/>
+        </div>
+
+        <div class='fieldForm'>
+            <%= f.text_field :portion, class:"fieldName" %>
+        </div>
+
+        <div class='fieldForm'>
+            <%= f.label :Custo, class:"labelFor" %><br/>
+        </div>
+
+        <div class='fieldForm'>
+            <%= f.number_field :cost, class:"fieldName" %>
+        </div>
+
+        <div class='fieldForm'>
+             <%= f.label :Poster, class:"labelFor" %><br/>
+        </div>
+
+        <div class='fieldForm'>
+            <%= f.text_field :poster, placeholder: '.JPEG OU .PNG' , class:"fieldName" %>
+        </div>
+  
+        <div class='buttonContainerForm'>
+            
+            <div class='SubmitContainerButton'>
+                <%= f.submit 'Confirmar', :class => 'SubmitButton' %>
+            </div>
+
+            <div class='CancelButton'>
+                <%= link_to 'Cancelar', root_path, :class => 'btn'%>
+            </div>
+            
+            
+        </div>
+
+    <% end %>   
+</div>
+ 

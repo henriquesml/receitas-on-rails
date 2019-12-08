@@ -1,35 +1,64 @@
+<link rel="stylesheet" type="text/css" href="view.css">
+
+<div class='containerView'>
+    <div class='containtView'>
+        <div class='headerView' >
+
+            <h1 class='titleView' ><%= @recipe.name %></h1>
+            <%= imagem(@recipe) %>
+
+            <h2 class='labelView'>Tipo</h2>
+            
+            <%= @recipe.kind  %>
+          
+
+            <h2 class='labelView'>Ingredientes</h2>
+            <%= @recipe.stuff %>
+
+            <h2 class='labelView'>Calorias</h2>
+            <%= @recipe.calories%>
+
+            <h2 class='labelView'>Modo de Preparo</h2>
+            <%= @recipe.prepare_mode %>
+
+            <h2 class='labelView'>Tempo de Preparo</h2>
+            <%= @recipe.duration.to_formatted_s(:time) %> min
+
+            <h2 class='labelView'>Porções</h2>
+            <%= pluralize(@recipe.portion, 'porção', 'porções') %>
+
+            <h2 class='labelView'>Custo</h2>
+            <%= number_to_currency(@recipe.cost) %>
+
+            <div class='labelView2'>
+            </div>
+
+        </div>
+
+        <div class='buttonView'>
+
+            <div class='buttonHome'>
+                <%= link_to 'Voltar', recipes_path, class:'none'%>
+            </div>
+            
+            <div class='buttonEdit'>
+                <%= link_to 'Editar receita', edit_recipe_path(@recipe), class:'none'%>
+            </div>
+            <div class='buttonDelete'>
+                <%= link_to 'Deletar receita', recipe_path(@recipe), method: :delete, data:{ confirm: 'Deseja deletar essa receita?' }, class:'none'%>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
 <article>
-    <header>
-        <h1><%= @recipe.name %></h1>
-        <%= imagem(@recipe) %>
-    </header>
 
-    <h2>Tipo</h2>
-    <p><%= @recipe.kind %></p>
 
-    <h2>Ingredientes</h2>
-    <p><%= @recipe.stuff %></p>
 
-    <h2>Calorias</h2>
-    <p><%= @recipe.calories%></p>
-
-    <h3>Modo de Preparo</h3>
-    <p><%= @recipe.prepare_mode %></p>
-
-    <h3>Tempo de Preparo</h3>
-    <p><%= @recipe.duration.to_formatted_s(:time) %></p> min
-
-    <h3>Porções</h3>
-    <p><%= pluralize(@recipe.portion, 'porção', 'porções') %></p>
-
-    <h3>Custo</h3>
-    <p>
-        <%= number_to_currency(@recipe.cost) %>
-    </p>
+   
 </article>
 
-<%= link_to 'Receitas', recipes_path%>
 
-<%= link_to 'Editar receita', edit_recipe_path(@recipe)%>
 
-<%= link_to 'Deletar receita', recipe_path(@recipe), method: :delete, data:{ confirm: 'Deseja deletar essa receita?' }%>
+-->
