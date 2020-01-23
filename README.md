@@ -1,3 +1,5 @@
 # Receitas On Rails
 
-<h1>In Progress</h1>
+## Receitas On Rails é um cardápio online, onde pessoas podem cadastrar suas receitas e compartilhar com outras pessoas.
+
+projeto desenvolvido afim de estudar ruby on rails
